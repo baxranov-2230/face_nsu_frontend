@@ -20,7 +20,6 @@ const navLinks = [
             { name: "Foto galeriya", href: "/gallery/photo" },
             { name: "Video galeriya", href: "/gallery/video" },
             { name: "Audio galeriya", href: "/gallery/audio" },
-            { name: "Tadbirlar", href: "/gallery/events" },
             { name: "Loyiha ishi", href: "/gallery/project-work" },
         ]
     },
@@ -83,13 +82,13 @@ export const Navbar = () => {
 
                     {/* CTA Button */}
                     <div className="hidden md:flex items-center gap-3">
-                        <Button variant="ghost" size="sm">
-                            Kirish
-                        </Button>
-                        <Button variant="hero" size="default">
-                            <ScanFace className="w-4 h-4" />
-                            Face ID bilan boshlash
-                        </Button>
+                       
+                        <a href="https://api.test.pdv-loyiha.uz/login" target="_blank">
+                            <Button variant="hero" size="default">
+                                <ScanFace className="w-4 h-4" />
+                                Face ID bilan boshlash
+                            </Button>
+                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -149,10 +148,12 @@ export const Navbar = () => {
                                         Kirish
                                     </Button>
                                 </a>
-                                <Button variant="hero">
-                                    <ScanFace className="w-4 h-4" />
-                                    Face ID bilan boshlash
-                                </Button>
+                                <a href="https://api.test.pdv-loyiha.uz/login" target="_blank">
+                                    <Button variant="hero" className="w-full">
+                                        <ScanFace className="w-4 h-4" />
+                                        Face ID bilan boshlash
+                                    </Button>
+                                </a>
                             </div>
                         </div>
                     </div>
