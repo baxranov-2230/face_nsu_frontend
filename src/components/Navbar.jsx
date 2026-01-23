@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ScanFace, Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -61,9 +62,9 @@ export const Navbar = () => {
                                     <DropdownMenuContent align="end">
                                         {link.children.map((child) => (
                                             <DropdownMenuItem key={child.name} asChild>
-                                                <a href={child.href} className="cursor-pointer">
+                                                <Link to={child.href} className="cursor-pointer">
                                                     {child.name}
-                                                </a>
+                                                </Link>
                                             </DropdownMenuItem>
                                         ))}
                                     </DropdownMenuContent>
@@ -82,7 +83,7 @@ export const Navbar = () => {
 
                     {/* CTA Button */}
                     <div className="hidden md:flex items-center gap-3">
-                       
+
                         <a href="https://api.test.pdv-loyiha.uz/login" target="_blank">
                             <Button variant="hero" size="default">
                                 <ScanFace className="w-4 h-4" />
@@ -119,14 +120,14 @@ export const Navbar = () => {
                                             {openSubmenu === index && (
                                                 <div className="pl-6 flex flex-col gap-1">
                                                     {link.children.map((child) => (
-                                                        <a
+                                                        <Link
                                                             key={child.name}
-                                                            href={child.href}
+                                                            to={child.href}
                                                             className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
                                                             onClick={() => setIsOpen(false)}
                                                         >
                                                             {child.name}
-                                                        </a>
+                                                        </Link>
                                                     ))}
                                                 </div>
                                             )}
